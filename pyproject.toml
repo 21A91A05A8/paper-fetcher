@@ -1,22 +1,19 @@
 [tool.poetry]
-name = "paper-fetcher"
+name = "pubmed-papers-cli"
 version = "0.1.0"
-description = "Fetches research papers from PubMed API"
-authors = ["Vyshnavi <bairagivyshnavi2003@gmail.com>"]
-packages = [{ include = "get_papers_list" }]
+description = "Fetch PubMed papers with non-academic authors and export as CSV"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "fetch" }]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.14"
+python = "^3.8"
 requests = "^2.31.0"
-pandas = "^2.2.2"
-lxml = "^5.1.0"
 
 [tool.poetry.scripts]
 get-papers-list = "cli:main"
-# OR use this instead if you prefer:
-# paper-fetch = "cli:main"
-
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
