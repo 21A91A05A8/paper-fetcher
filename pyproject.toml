@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "paper-fetcher"
+version = "0.1.0"
+description = "Fetches research papers from PubMed API"
+authors = ["Vyshnavi <bairagivyshnavi2003@gmail.com>"]
+packages = [{ include = "get_papers_list" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.14"
+requests = "^2.31.0"
+pandas = "^2.2.2"
+lxml = "^5.1.0"
+
+[tool.poetry.scripts]
+get-papers-list = "cli:main"
+# OR use this instead if you prefer:
+# paper-fetch = "cli:main"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
