@@ -52,7 +52,7 @@ CLI Options:
 
 **Example:**
 ```bash
-python -m cli "biotech clinical trial" --max 10 --file results.csv --debug
+python cli.py "biotech clinical trial" --max 10 --file results.csv --debug
 ```
 This will fetch 10 papers related to "biotech clinical trial", print debug information, and save the results to a CSV file named **results.csv**.
 
