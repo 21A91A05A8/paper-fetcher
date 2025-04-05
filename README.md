@@ -28,7 +28,7 @@ paper-fetcher/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/paper-fetcher.git
+git clone https://github.com/21A91A05A8/paper-fetcher.git
 cd paper-fetcher
 ```
 
