@@ -9,10 +9,9 @@ The tool identifies papers that have at least one author affiliated with a pharm
 
 ```
 paper-fetcher/ 
-├── get_papers_list/                  # Python module that contains logic to fetch, parse, and filter papers 
+├── fetch/                  # Python module that contains logic to fetch, parse, and filter papers 
 │   ├── __init__.py 
-│   ├── fetch.py                      # Functions to fetch paper data from PubMed 
-│   └── utils.py                      # Utility functions for parsing and filtering author affiliations 
+│   └── fetch.py                      # Functions to fetch paper data from PubMed                      # Utility functions 
 ├── cli.py                            # Command-line interface script 
 ├── pyproject.toml                    # Poetry configuration file 
 ├── poetry.lock                       # Lock file for dependencies 
@@ -51,14 +50,20 @@ CLI Options:
 * **--file or -f** – Filename to save the CSV results (if not provided, prints to console)
 * **--debug or -d** – Enable debug output for additional logs
 
+**Example:**
+```bash
+python -m cli "biotech clinical trial" --max 10 --file results.csv --debug
+```
+This will fetch 10 papers related to "biotech clinical trial", print debug information, and save the results to a CSV file named **results.csv**.
+
 ## 🧰 Tools & Libraries Used
 * **Poetry** – for dependency management and packaging  
 * **Biopython** – for interacting with the PubMed API  
 * **argparse** – for command-line argument parsing  
-* **xml.etree.ElementTree** – to parse XML from PubMed  
+* **xml.etree.ElementTree** – to parse XML from PubMed
+* **re** – for regular expressions to extract author emails
 * **VS Code & GitHub** – used for development and version control  
 
 ## 📌 Note
-The CSV file (results.csv) is optional and will be generated only if the --file option is provided.
-
+The CSV file (results.csv) is optional and will be generated only if the --file option is provided.If no file is specified, the output will be printed to the console.
 Ensure your internet connection is active while fetching from PubMed.
